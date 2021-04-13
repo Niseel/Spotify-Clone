@@ -1,0 +1,7 @@
+.body {
+  padding: 15px 30px 30px 30px;
+  height: 100vh;
+  flex: 0.835;
+  background-color: #1a1a1a;
+  color: azure;
+}

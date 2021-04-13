@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  height: 90px;
+  width: 100%;
+  background-color: #282828;
+  color: #b2b2b2;
+}
+
+.footer__left {
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  flex: 0.3 1;
+}
+.footer__left .song-playing-img {
+  width: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+.footer__left .song-playing-info {
+}
+.footer__left .song-playing-info .song-playing-name {
+  color: #fff;
+}
+.footer__center {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 0.4;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__center .footer__center_up {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footer__center .footer__center_up .footer__center_icon:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
+}
+.footer__center .footer__center_up .footer__center_icon.icon_active {
+  color: #1ed760;
+}
+
+.footer__center .footer__center_down {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.footer__center .footer__center_down .padding-10 {
+  padding: 10px;
+}
+
+.footer__right {
+  font-size: 10px;
+  max-width: 200px;
+  min-width: 150px;
+  flex: 0.3;
+}
+
+.footer__right * .MuiSlider-root {
+  color: #1ed760;
+}
+.footer__center * .MuiSlider-root {
+  color: #1ed760;
+}

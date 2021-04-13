@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__right .user_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #000;
+  border: 3px #000 solid;
+  border-radius: 99px;
+}
+.header__right .user_info > img {
+  width: 30px;
+  object-fit: contain;
+  border-radius: 99px;
+  margin-right: 10px;
+}
+
+.text-collapse {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 120px;
+}
+.extra_icon:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
+}

@@ -1,0 +1,27 @@
+.sidebar {
+  border: 1px #000 solid;
+  height: 100vh;
+  min-width: 230px;
+  padding: 15px 20px 0px 20px;
+  flex: 0.165;
+  background-color: #000;
+  color: azure;
+}
+
+.sidebar__logo {
+  width: 165px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.line-bottom {
+  border-bottom: 0.5px #5a5a5a solid;
+  margin: 7px 0px 18px 0px;
+}
+
+.playlist {
+  padding: 0;
+}

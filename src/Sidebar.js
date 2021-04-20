@@ -25,8 +25,8 @@ function Sidebar() {
       <SidebarOption Icon={AddBoxIcon} title="Create Playlist" />
       <SidebarOption Icon={FavoriteIcon} title="Liked Songs" />
       <div className="line-bottom"></div>
-      {playlists?.items?.map((playlist) => (
-        <SidebarOption title={playlist.name} padding="0" />
+      {playlists?.items?.map((playlist, key) => (
+        <SidebarOption title={playlist.name} key={playlist.id} padding="0" />
       ))}
     </div>
   );

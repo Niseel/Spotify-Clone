@@ -1,17 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDateLayerValue } from "./DataLayer";
-import SpotifyPlayer from "react-spotify-web-playback";
 
-export default function DizzTrack({ trackUri }) {
-  const [{ token }, dispatch] = useDateLayerValue();
-  const [trackPre, setTrackPre] = useState(trackUri);
-  useEffect(() => setTrackPre(trackUri), [trackPre]);
+export default function DizzTrack({ track, trackUri }) {
+  const [audioStatus, changeAudioStatus] = useState(false);
+  const myRef = useRef();
+
+  const startAudio = () => {
+    myRef.current.play();
+    changeAudioStatus(true);
+  };
+
+  const pauseAudio = () => {
+    //console.log("here");
+    myRef.current.pause();
+    changeAudioStatus(false);
+  };
+
+  useEffect(() => {
+    changeAudioStatus(false);
+  }, [trackUri]);
+
+  if (!trackUri) return null;
+
   return (
     <div>
-      {/* {token} */}
-      <audio controls>
-        <source src={trackPre} />
-      </audio>
+      <audio ref={myRef} src={trackUri} />
+      {/* {audioStatus ? (
+        <button onClick={pauseAudio}>pause</button>
+      ) : (
+        <button onClick={startAudio}>start</button>
+      )} */}
     </div>
   );
 }

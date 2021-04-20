@@ -10,7 +10,10 @@ import { useDateLayerValue } from "./DataLayer";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token, playlists }, dispatch] = useDateLayerValue();
+  const [
+    { user, token, playlists, currentTrack },
+    dispatch,
+  ] = useDateLayerValue();
   //Biến user trên như là DataLayer trong minh họa v
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -21,6 +24,11 @@ function App() {
       dispatch({
         type: "SET_TOKEN",
         token: _token,
+      });
+
+      dispatch({
+        type: "SET_TRACK",
+        currentTrack: currentTrack,
       });
 
       spotify.setAccessToken(_token);
@@ -37,6 +45,13 @@ function App() {
           playlists: playlists,
         });
       });
+
+      spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) =>
+        dispatch({
+          type: "SET_HOME_SET_PLAYLISTS",
+          discover_weekly: response,
+        })
+      );
     }
 
     // console.log("I have token: ", _token);

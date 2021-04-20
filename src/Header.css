@@ -3,6 +3,9 @@
   justify-content: space-between;
 }
 
+.header__right {
+  padding-top: 22px;
+}
 .header__right .user_info {
   display: flex;
   flex-direction: row;

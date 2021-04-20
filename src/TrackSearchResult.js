@@ -4,16 +4,16 @@ import "./TrackSearchResult.css";
 function TrackSearchResult({ track, chooseTrack }) {
   function handlePlay() {
     chooseTrack(track);
-    console.log("clicked");
+    //console.log("clicked");
   }
   return (
     <div
-      className="d-flex m-2 align-items-center"
+      className="search-item"
       style={{ cursor: "pointer" }}
       onClick={handlePlay}
     >
       <img src={track.albumUrl} style={{ height: "64px", width: "64px" }} />
-      <div className="ml-3">
+      <div className="ml">
         <div>{track.title}</div>
         <div className="text-muted">{track.artist}</div>
       </div>

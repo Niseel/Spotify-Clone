@@ -16,5 +16,5 @@ npm install
 - **Để chạy chương trình**
 
 ```
-node index.js
+npm start
 ```
